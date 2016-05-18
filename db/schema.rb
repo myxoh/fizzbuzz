@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20160517210749) do
 
   create_table "favorites", force: :cascade do |t|
-    t.integer  "number",     limit: 12
+    t.integer  "number",     limit: 8
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
   end
