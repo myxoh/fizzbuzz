@@ -1,0 +1,15 @@
+{
+  "name": "cliclient",
+  "version": "1.0.0",
+  "description": "\"CLI Client for TEST BuzzFeed Application\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "author": "Nicolas Klein",
+  "license": "MIT",
+  "preferGlobal": true,
+  "bin": {
+    "cliclient": "./bin/cliclient.js"
+  }
+}

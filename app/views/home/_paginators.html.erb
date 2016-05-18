@@ -1,0 +1,9 @@
+<nav>
+  <ul class="pagination">
+  	<%=page 0, "<<"%>
+	<%=page @page-1, "<", @page>0%>
+	<%=current_page @page%>
+	<%=page @page+1, ">", @page<@last_page%>
+	<%=page @last_page,">>", true%>
+  </ul>
+</nav>
