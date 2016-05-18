@@ -1,28 +1,26 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the FizzBuzz Test. 
+It Contains the Ruby on Rails server for the Test 
++ 
+The cliclient (on cliclient folder)
 
-Things you may want to cover:
+This was tested under sqlite and mysql (It is set up on sqlite to avoid configuration issues)
+This test was tested using Unit and Functional Tests (run rake test)
 
-* Ruby version
+To initialize the ruby on rails app just:
+* rake db:setup
+* rails s
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To use the cliclient
+* cd cliclient
+* npm link (with node and npm installed)
+- Options:
+* cliclient (default) # Shows favorite numbers # Shows numbers and FizzBuzz
+* cliclient all [page number # Default 0 #] [page size # Default 100 #] # Shows size numbers starting in number*size. You can see the fizzbuzz of the number, and if it is or not a favorite.
+* cliclient add [number] # Adds a new favorite number. displays favorites
+* cliclient remove [number] #Removes a favorite number. displays favorites
+* cliclient favorites  #Shows favorite numbers # Shows numbers and FizzBuzz
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+

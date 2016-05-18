@@ -4,4 +4,11 @@ class Favorite < ActiveRecord::Base
   def fizzbuzz
     FizzBuzzService.new.fizzbuzz(number)
   end
+  def as_json(options={}) 
+    {
+      :number => number,
+      :fizzbuzz => fizzbuzz,
+      :id => id
+    }
+  end
 end
