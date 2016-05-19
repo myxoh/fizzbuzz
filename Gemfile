@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+#Added Gems:
+gem 'bootstrap-sass',       '3.2.0.0'
+gem 'rails-assets-tether', '>= 1.1.0'
+gem 'mysql2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -12,9 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'bootstrap-sass',       '3.2.0.0'
-gem 'rails-assets-tether', '>= 1.1.0'
-gem 'mysql2'
+
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library

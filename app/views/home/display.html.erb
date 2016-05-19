@@ -1,27 +1,27 @@
 <h1>FizzBuzz Test</h1>
 <h3>Your Favorite Numbers</h3>
-	<table>
-	<%=@favorites.each_slice(4) do |row|%>
-			<div class="row">
-			<%=render partial:"favorite", collection:row%>
-			</div>
-	<%end%>
-	</table>
+<table>
+  	<%= @favorites.each_slice 4 do |row| %>
+  			<div class="row">
+  			 <%= render partial: "favorite", collection: row %>
+  			</div>
+  	<%end%>
+</table>
 <hr>
 <hr>
-<h3>Page <%=@page.to_i%> all numbers:</h3>
-	Page Size: 
-	<%=form_tag(set_page_size_path, method: :get) do |f|%>
-	<%=hidden_field_tag "current_page", @page, id:"current_page"%>
-	<%=number_field_tag "page_size", @page_size%>
-	<%=submit_tag "Change Size"%>
+<h3>Page <%= @page.to_i %> all numbers:</h3>
+Page Size: 
+<%= form_tag set_page_size_path, method: :get do |f| %>
+<%= hidden_field_tag "current_page", @page, id: "current_page" %>
+<%= number_field_tag "page_size", @page_size %>
+<%= submit_tag "Change Size" %>
+<%end%>
+<table>
+	<%= @numbers.each_slice 6 do |row| %>
+		<div class="row">
+		<%= render partial: "number", collection: row %>
+		</div>
 	<%end%>
-	<table>
-		<%=@numbers.each_slice(6) do |row|%>
-			<div class="row">
-			<%=render partial:"number", collection:row%>
-			</div>
-		<%end%>
-	</table>
-	<hr>
-	<%=render partial:"paginators"%>
+</table>
+<hr>
+<%= render partial: "paginators" %>

@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def create
-    Favorite.create(favorite_params)
+    Favorite.create favorite_params
     redirect_to page_path params[:page]
   end
 
@@ -11,6 +11,6 @@ class FavoritesController < ApplicationController
   
   private
   def favorite_params
-    params.require(:favorite).permit(:number)
+    params.require(:favorite).permit :number
   end
 end

@@ -1,35 +1,37 @@
 #! /usr/bin/env node
 
 /*HELPERS*/
-var h = require("includes/helper_functions");
-var s = require("includes/request_server");
+var helper = require("includes/helper_functions");
+var server = require("includes/request_server");
 
 
 /* ACTIONS */
-action=(process.argv[2]);
+action = (process.argv[2]);
 switch(action){
 	case "all":
-		page=h.g(process.argv[3],0);
-		page_size=h.g(process.argv[4],100);
-		options="/"+page+"/"+page_size;
-		s.requestS(null,null, "numbers", options);
+		page = helper.get(process.argv[3],0);
+		page_size = helper.get(process.argv[4],100);
+		options = "/" + page + "/" + page_size;
+		server.requestS(null,null, "numbers", options);
 	break;
+	
 	case "favorites":
-		requestS();
+		server.requestS();
 	break;
+	
 	case "add":
-		number=h.g(process.argv[3]);
-		data={favorite:{number:number}};
-		s.requestS(null,"POST","favorites",null,data);
+		number = helper.get(process.argv[3]);
+		data={favorite: {number: number}};
+		server.requestS(null, "POST", "favorites", null, data);
 	break;
 	
 	case "remove":
-		number=h.g(process.argv[3]); // NUMBER
-		favorites=s.requestS(null,null,null,null,null, true, number); //GET  FAVORITES
+		number = helper.get(process.argv[3]); // NUMBER
+		favorites = server.requestS(null, null, null, null, null, true, number); //GET  FAVORITES
 	break;
 	
 	default:
-		s.requestS();
+		server.requestS();
 	break;
 }
 /* END ACTIONS*/

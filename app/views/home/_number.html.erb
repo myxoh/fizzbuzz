@@ -1,13 +1,14 @@
 <div class="col-xs-4 col-md-2">
 	<div class="thumbnail">
-	<span class="glyphicon glyphicon-star<%if !number[:favorite]%>-empty<%end%>"></span><span><%=number[:fizzbuzz]%></span>
-	<hr>
-	<center>
-		<%if number[:favorite]%>
-			<%=remove_favorite(number[:value])%>
-		<%else%>
-			<%=add_favorite(number[:value])%>
-		<%end%>
-	</center>
+  	<span class="glyphicon glyphicon-star<%if !number[:favorite]%>-empty<%end%>"></span>
+  	<span><%=number[:fizzbuzz]%></span>
+  	<hr>
+  	<center>
+  		<% if number[:favorite] %>
+  			<%= remove_favorite number[:value] %>
+  		<% else %>
+  			<%= add_favorite number[:value] %>
+  		<% end %>
+  	</center>
 	</div>
 </div>
