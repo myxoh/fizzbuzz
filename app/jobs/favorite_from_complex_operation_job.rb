@@ -11,10 +11,9 @@ class FavoriteFromComplexOperationJob < ActiveJob::Base
     primes = []
     begin
       number.times{primes.push true}
-      max = Math.sqrt(number).to_i
       primes[0] = false
       primes[1] = false
-      (max).times do |num|
+      (number).times do |num|
         if primes[num] then
           iterator = num
           cross = num + iterator
@@ -27,6 +26,12 @@ class FavoriteFromComplexOperationJob < ActiveJob::Base
     rescue
       puts "#{number}: More than memory could handly"
     end
-    return primes
+    prime_list=[]
+    prime=0 
+    primes.each do |is_prime|
+        prime_list.push prime unless !is_prime
+        prime+=1
+    end
+    prime_list
   end
 end
