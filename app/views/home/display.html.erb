@@ -8,6 +8,13 @@
   	<%end%>
 </table>
 <hr>
+Add From primes up to:
+<%= form_tag add_primes_favorites_path, method: :get do |f| %>
+<%= hidden_field_tag "page", @page %>
+<%= number_field_tag :prime, 1%>
+<%= submit_tag "Add" %>
+<% end %>
+<hr>
 <hr>
 <h3>Page <%= @page.to_i %> all numbers:</h3>
 Page Size: 

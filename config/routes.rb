@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   get "set_page_size" => "home#set_page_size"
   get "set_page_size/:size" => "home#set_page_size"
   
-  resources :favorites, only: [:create, :destroy]
+  resources :favorites, only: [:create, :destroy] do
+    collection do
+      get "add_primes"
+    end
+  end
   
   root 'home#display'
   
